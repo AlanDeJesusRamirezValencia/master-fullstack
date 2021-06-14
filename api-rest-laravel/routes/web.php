@@ -19,5 +19,9 @@ Route::get('/pruebas/{nombre?}', function ($nombre = null) {
     $texto = '<h1>Texto desde una ruta</h1> Nombre: '.$nombre;
     return view('pruebas', array(
         'texto' => $texto
-));
+    ));
 });
+
+Route::post('/api/user/register/', 'UserController@register');
+Route::post('/api/user/login/', 'UserController@login');
+Route::put('/api/user/update/', 'UserController@update');
